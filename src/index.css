@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Space+Grotesk:wght@300;400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --color-paper: #f7f5ef;
+  --color-ink: #111111;
+  --color-accent: #facc15;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans;
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    background-image:
+      linear-gradient(rgba(17, 17, 17, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(17, 17, 17, 0.04) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--color-accent) 80%, white);
+    color: var(--color-ink);
+  }
+
+  button,
+  a,
+  input,
+  textarea {
+    transition:
+      background-color 160ms ease,
+      color 160ms ease,
+      transform 160ms ease,
+      box-shadow 160ms ease,
+      border-color 160ms ease;
+  }
+}
+
+/* Custom Brutalist Utilities */
+.neo-brutalism-shadow {
+  box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+}
+
+.neo-brutalism-shadow-lg {
+  box-shadow: 8px 8px 0px 0px rgba(0,0,0,1);
+}
+
+.neo-brutalism-shadow-xl {
+  box-shadow: 12px 12px 0px 0px rgba(0,0,0,1);
+}
+
+/* Animation for the marquee-like feel */
+@keyframes slide {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  animation: slide 20s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

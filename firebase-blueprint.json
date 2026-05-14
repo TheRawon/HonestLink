@@ -1,0 +1,44 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "A user profile in the HonestLink platform.",
+      "type": "object",
+      "properties": {
+        "displayName": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "email": { "type": "string" },
+        "honestTitle": { "type": "string" },
+        "bio": { "type": "string" },
+        "joinedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["displayName", "email", "honestTitle"]
+    },
+    "Post": {
+      "title": "Post",
+      "description": "A post in the honest feed.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "authorName": { "type": "string" },
+        "authorPhoto": { "type": "string" },
+        "content": { "type": "string" },
+        "type": { "type": "string", "enum": ["rant", "tip", "interview", "review", "salary"] },
+        "companyName": { "type": "string" },
+        "likesCount": { "type": "number" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "content", "type", "createdAt"]
+    }
+  },
+  "firestore": {
+    "users/{userId}": {
+      "schema": "User",
+      "description": "User profiles"
+    },
+    "posts/{postId}": {
+      "schema": "Post",
+      "description": "Honest feed posts"
+    }
+  }
+}

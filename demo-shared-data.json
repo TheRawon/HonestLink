@@ -1,0 +1,32 @@
+{
+  "posts": [
+    {
+      "id": "demo-1",
+      "userId": "demo-system",
+      "authorName": "HonestLink Demo",
+      "authorPhoto": "https://api.dicebear.com/9.x/shapes/svg?seed=HonestLink",
+      "content": "Welcome to shared demo mode. Is device se jo post hoga, woh dusre local users ko bhi dikh sakta hai.",
+      "type": "tip",
+      "likesCount": 0,
+      "dislikesCount": 0,
+      "createdAt": 1778746381272,
+      "comments": [],
+      "likedByUserIds": [],
+      "dislikedByUserIds": []
+    },
+    {
+      "id": "demo-2",
+      "userId": "demo-system",
+      "authorName": "Career Survivor",
+      "authorPhoto": "https://api.dicebear.com/9.x/shapes/svg?seed=CareerSurvivor",
+      "content": "Interview process 5 rounds ka tha, feedback zero mila. Isi liye transparency zaroori hai.",
+      "type": "interview",
+      "likesCount": 0,
+      "dislikesCount": 0,
+      "createdAt": 1778743801272,
+      "comments": [],
+      "likedByUserIds": [],
+      "dislikedByUserIds": []
+    }
+  ]
+}
